@@ -18,6 +18,6 @@ conexao_sql.conecta_sql();
 conexao.incia_conexao();
 
 
-server.listen(7070, function () {
+server.listen(4466, function () {
     console.log(`Servidors Carregado ${server.address().port}`);
 });

@@ -23,8 +23,18 @@ router.get('/', function (req, res) {
 
     referencia = req.query.referencia;
 
+    if(req.query.referencia){
 
-    sql = `SELECT TOP 10 * FROM vis_Tracking_Portal_Follow_API WHERE Numero_Processo = '${referencia}' OR Referencia_Cliente = '${referencia}' ORDER BY Data ASC`;
+      sql = `SELECT * FROM vis_Tracking_Portal_Follow_API WHERE IdCliente = 49043 AND (Numero_Processo = '${referencia}' OR Referencia_Cliente = '${referencia}') ORDER BY Data ASC`;
+  
+    }else{
+
+      sql = `SELECT * FROM vis_Tracking_Portal_Follow_API WHERE IdCliente = 49043 ORDER BY Data ASC`;
+ 
+    }
+     
+    
+       
     trans = {};
 CONEXA_HEAD.execSql(new Request(sql, function(err, rowCount, rows){
   if(err) {
