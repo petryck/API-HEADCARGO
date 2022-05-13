@@ -25,11 +25,11 @@ router.get('/', function (req, res) {
 
     if(req.query.referencia){
 
-      sql = `SELECT * FROM vis_Tracking_Portal_Follow_API WHERE IdCliente = 49043 AND (Numero_Processo = '${referencia}' OR Referencia_Cliente = '${referencia}') ORDER BY Data ASC`;
+      sql = `SELECT * FROM vis_Tracking_Portal_Follow_API WHERE (IdCliente = 49043 OR IdImportador = 49043 OR IdExportador = 49043) AND (Numero_Processo = '${referencia}' OR Referencia_Cliente = '${referencia}') ORDER BY Data ASC`;
   
     }else{
 
-      sql = `SELECT * FROM vis_Tracking_Portal_Follow_API WHERE IdCliente = 49043 ORDER BY Data ASC`;
+      sql = `SELECT * FROM vis_Tracking_Portal_Follow_API WHERE IdCliente = 49043 OR IdImportador = 49043 OR IdExportador = 49043 ORDER BY Data ASC`;
  
     }
      
