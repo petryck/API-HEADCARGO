@@ -29,7 +29,7 @@ router.get('/', function (req, res) {
   
     }else{
 
-      sql = `SELECT * FROM vis_Tracking_Portal_Follow_API WHERE IdCliente = 49043 OR IdImportador = 49043 OR IdExportador = 49043 ORDER BY Data ASC`;
+      sql = `SELECT * FROM vis_Tracking_Portal_Follow_API WHERE (IdCliente = 49043 OR IdImportador = 49043 OR IdExportador = 49043) ORDER BY Data ASC`;
  
     }
      
